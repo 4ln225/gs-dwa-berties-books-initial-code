@@ -28,11 +28,15 @@ const db = mysql.createPool({
     user: 'berties_books_app',
     password: 'qwertyuiop',
     database: 'berties_books',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
+
 });
 global.db = db;
+
+app.use((req, res, next) => {
+    req.db = db;
+    next();
+  });
+  
 
 // Load the route handlers
 const mainRoutes = require("./routes/main")
