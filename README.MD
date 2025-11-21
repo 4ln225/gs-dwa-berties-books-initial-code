@@ -8,3 +8,5 @@ To install and run:
 
 npm install
 node index.js
+
+run on vm browser e.g. https://doc.gold.ac.uk/usr/398/
